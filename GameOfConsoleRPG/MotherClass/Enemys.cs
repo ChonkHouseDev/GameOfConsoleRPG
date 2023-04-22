@@ -120,7 +120,7 @@ namespace GameOfConsoleRPG.MotherClass
 
         }
 
-        public EnemyHorse[] GeneradorDeEnemigosKing(EnemyHorse[] horse)
+        public EnemyHorse[] GeneradorDeEnemigosHorse(EnemyHorse[] horse)
         {
 
             terminado = false;

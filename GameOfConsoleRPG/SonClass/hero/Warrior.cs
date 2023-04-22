@@ -15,10 +15,16 @@ namespace GameOfConsoleRPG.SonClass.hero
 
         public int _hp;
         public int _mana;
+        public int _damage;
+        public int _shield;
+        public int _defense;
 
         protected bool Visible;
         protected string Ability;
         protected string _special;
+
+
+
 
 
         private string _atk1;
@@ -36,25 +42,36 @@ namespace GameOfConsoleRPG.SonClass.hero
             Visible = visible;
         }
 
-        public int VidaExtra
+        public int ShieldExtra
         {
-            get { return _hp; }
+            get { return _shield; }
 
             set
             {
-                _hp = value;
-                vidaExtra();
+                _shield = value;
+                EscudoExtra();
             }
         }
 
-        public int ManaExtra
+        public int DefenseExtra
         {
-            get { return _mana; }
+            get { return _defense; }
 
             set
             {
-                _mana = value;
-                manaExtra();
+                _defense = value;
+                DefensaExtra();
+            }
+        }
+
+        public int DamageExtra
+        {
+            get { return _damage; }
+
+            set
+            {
+                _damage = value;
+                DefensaExtra();
             }
         }
 
@@ -137,16 +154,22 @@ namespace GameOfConsoleRPG.SonClass.hero
             }
         }
 
-        public void vidaExtra()
+        public void EscudoExtra()
         {
 
             _hp = _hp + 100;
         }
 
-        public void manaExtra()
+        public void DefensaExtra()
         {
 
             _mana = _mana + 200;
+        }
+
+        public void AtaqueExtra()
+        {
+
+            _damage = _damage + 200;
         }
 
         public void CambioAtaque1()
