@@ -5,11 +5,7 @@ using GameOfConsoleRPG.SonClass.hero;
 using GameOfConsoleRPG.SonClass.Objects;
 
 bool terminado = false;
-int xMapa = 10, yMapa = 2;
-int puntos;
 
-
-//Heros InicioHeroe = new Heros("nombre", 100, 100, "golpe", "golpeObjeto",5, 40, 12, 0, 0);
 Heros InicioHeroe = new Heros(5, 40, 12);
 
 Enemys InicioEnemigos = new Enemys("nombre", 100, 100, "golpe", "golpeEspecial", 1, 40, 12, 0, 0);
@@ -120,7 +116,7 @@ while (true)
             Mage merlin = new Mage(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
                                    InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia, 
                                    InicioHeroe.Lvl,InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "AntiMagia", 
-                                   "☃", ConsoleColor.Yellow, true);
+                                   "☃", ConsoleColor.DarkGreen, true);
 
             EnemyPeon[] peonesActualizados = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
             ObjectBomb[] itemsActualizados = InicioObjetos.GeneradorDeObjetosBomba(objetos);
@@ -143,12 +139,45 @@ while (true)
                                    InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
                                    InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, 
                                    "AntiFlechas", "☺", ConsoleColor.DarkBlue, true);
+
+            EnemyPeon[] peonesActualizado = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
+            ObjectBomb[] itemsActualizado = InicioObjetos.GeneradorDeObjetosBomba(objetos);
+
+            while (!terminado)
+            {
+
+                InicioHeroe.ComprobarEntradayUsuario(merlin);
+                InicioEnemigos.AnimarElementos(peonesActualizados);
+                bool terminadoEnemigos = InicioEnemigos.ComprobarEstadoDelJuegoEnemigos(peonesActualizados, merlin);
+                (bool term, int punto) = InicioObjetos.ComprobaritemsUsuario(merlin, itemsActualizados);
+                InicioHeroe.DibujarCalabozo(merlin, peonesActualizados, itemsActualizados, punto);
+                if (terminadoEnemigos == true || term == true)
+                    terminado = true;
+                InicioHeroe.PausaHastaFinDeFotograma();
+            }
+
             break;
         case "3":
             Warrior ajax = new Warrior(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
                                    InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
                                    InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, 
                                    "Inmunidad", "☠", ConsoleColor.DarkRed, true);
+
+            EnemyPeon[] peonesActualizados = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
+            ObjectBomb[] itemsActualizados = InicioObjetos.GeneradorDeObjetosBomba(objetos);
+
+            while (!terminado)
+            {
+
+                InicioHeroe.ComprobarEntradayUsuario(merlin);
+                InicioEnemigos.AnimarElementos(peonesActualizados);
+                bool terminadoEnemigos = InicioEnemigos.ComprobarEstadoDelJuegoEnemigos(peonesActualizados, merlin);
+                (bool term, int punto) = InicioObjetos.ComprobaritemsUsuario(merlin, itemsActualizados);
+                InicioHeroe.DibujarCalabozo(merlin, peonesActualizados, itemsActualizados, punto);
+                if (terminadoEnemigos == true || term == true)
+                    terminado = true;
+                InicioHeroe.PausaHastaFinDeFotograma();
+            }
             return;
         default:
             Console.WriteLine("Opción inválida. Intente de nuevo.");

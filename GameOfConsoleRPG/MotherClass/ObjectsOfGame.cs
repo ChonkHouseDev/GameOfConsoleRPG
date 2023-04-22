@@ -11,22 +11,29 @@ namespace GameOfConsoleRPG.MotherClass
 
     public class ObjectsOfGame
     {
+        //public
+        public bool terminado = false;
         public string Name;
         public string TypeObjet;
         public int Lvl;
-        public bool Damage;
+        public int X;
+        public int Y;
         public int ValueDamage;
+        
+        //private
         public bool Reusable;
         public int LvlUsable;
         public bool Tresure;
         public bool Weapon;
-        public int X;
-        public int Y;
-        static int numItems;
-        static int itemsRestantes;
-        static int puntos;
-        static Random generador;
-        bool terminado = false;
+        public bool Damage;
+
+        //protected
+        protected int numItems;
+        protected int itemsRestantes;
+        protected int puntos;
+        protected Random generador;
+
+
 
 
 
@@ -98,64 +105,84 @@ namespace GameOfConsoleRPG.MotherClass
             return itemBow;
         }
 
-        public ObjectHealer[] GeneradorDeObjetosBow(ObjectHealer[] itemBow)
+        public ObjectHealer[] GeneradorDeObjetosHealer(ObjectHealer[] itemHealer)
         {
             generador = new Random();
-            numItems = itemBow.Length - 1;
+            numItems = itemHealer.Length - 1;
             itemsRestantes = numItems;
             for (int i = 0; i < numItems; i++)
             {
-                itemBow[i].X = generador.Next(5, 55);
-                itemBow[i].Y = generador.Next(2, 20);
-                itemBow[i].Color = itemBow[itemsRestantes].Color;
-                itemBow[i].Simbolo = itemBow[itemsRestantes].Simbolo;
-                itemBow[i].Visible = itemBow[itemsRestantes].Visible;
+                itemHealer[i].X = generador.Next(5, 55);
+                itemHealer[i].Y = generador.Next(2, 20);
+                itemHealer[i].Color = itemHealer[itemsRestantes].Color;
+                itemHealer[i].Simbolo = itemHealer[itemsRestantes].Simbolo;
+                itemHealer[i].Visible = itemHealer[itemsRestantes].Visible;
             }
 
 
             puntos = 0;
 
-            return itemBow;
+            return itemHealer;
         }
 
-        public ObjectStickMage[] GeneradorDeObjetosBow(ObjectStickMage[] itemBow)
+        public ObjectStickMage[] GeneradorDeObjetosStickMage(ObjectStickMage[] itemStickMage)
         {
             generador = new Random();
-            numItems = itemBow.Length - 1;
+            numItems = itemStickMage.Length - 1;
             itemsRestantes = numItems;
             for (int i = 0; i < numItems; i++)
             {
-                itemBow[i].X = generador.Next(5, 55);
-                itemBow[i].Y = generador.Next(2, 20);
-                itemBow[i].Color = itemBow[itemsRestantes].Color;
-                itemBow[i].Simbolo = itemBow[itemsRestantes].Simbolo;
-                itemBow[i].Visible = itemBow[itemsRestantes].Visible;
+                itemStickMage[i].X = generador.Next(5, 55);
+                itemStickMage[i].Y = generador.Next(2, 20);
+                itemStickMage[i].Color = itemStickMage[itemsRestantes].Color;
+                itemStickMage[i].Simbolo = itemStickMage[itemsRestantes].Simbolo;
+                itemStickMage[i].Visible = itemStickMage[itemsRestantes].Visible;
             }
 
 
             puntos = 0;
 
-            return itemBow;
+            return itemStickMage;
         }
 
-        public ObjectSword[] GeneradorDeObjetosBow(ObjectSword[] itemBow)
+        public ObjectSword[] GeneradorDeObjetosSword(ObjectSword[] itemSword)
         {
             generador = new Random();
-            numItems = itemBow.Length - 1;
+            numItems = itemSword.Length - 1;
             itemsRestantes = numItems;
             for (int i = 0; i < numItems; i++)
             {
-                itemBow[i].X = generador.Next(5, 55);
-                itemBow[i].Y = generador.Next(2, 20);
-                itemBow[i].Color = itemBow[itemsRestantes].Color;
-                itemBow[i].Simbolo = itemBow[itemsRestantes].Simbolo;
-                itemBow[i].Visible = itemBow[itemsRestantes].Visible;
+                itemSword[i].X = generador.Next(5, 55);
+                itemSword[i].Y = generador.Next(2, 20);
+                itemSword[i].Color = itemSword[itemsRestantes].Color;
+                itemSword[i].Simbolo = itemSword[itemsRestantes].Simbolo;
+                itemSword[i].Visible = itemSword[itemsRestantes].Visible;
             }
 
 
             puntos = 0;
 
-            return itemBow;
+            return itemSword;
+        }
+
+        public ObjectShield[] GeneradorDeObjetosShield(ObjectShield[] itemSword)
+        {
+            generador = new Random();
+            numItems = itemSword.Length - 1;
+            itemsRestantes = numItems;
+            for (int i = 0; i < numItems; i++)
+            {
+                itemSword[i].X = generador.Next(5, 55);
+                itemSword[i].Y = generador.Next(2, 20);
+                itemSword[i].Color = itemSword[itemsRestantes].Color;
+                itemSword[i].Simbolo = itemSword[itemsRestantes].Simbolo;
+                itemSword[i].Visible = itemSword[itemsRestantes].Visible;
+            }
+
+
+            puntos = 0;
+
+            return itemSword;
         }
 
         public (bool, int) ComprobaritemsUsuario(Heros merlin, ObjectBomb[] items)
@@ -183,6 +210,7 @@ namespace GameOfConsoleRPG.MotherClass
 
             return (terminado, puntos);
         }
+
 
     }
 }

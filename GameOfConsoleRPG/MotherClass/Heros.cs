@@ -12,6 +12,7 @@ namespace GameOfConsoleRPG.MotherClass
 {
     public class Heros
     {
+        //public
         public string Name;
         public int Hp;
         public int Mana;
@@ -20,17 +21,22 @@ namespace GameOfConsoleRPG.MotherClass
         public int Y;
         public int velocx;
         public int velocy;
-        static int xMapa = 10, yMapa = 2;
-        public string _name;
-        public int _hp;
-        public int _mana;
-        public string _atk1;
-        public string _atk2;
-        public string _atk3;
-        public string _atk4;
-        public string _special;
-        public int _exp;
-        static string[] mapa =
+
+        //private
+        private string _name;
+        private int _hp;
+        private int _mana;
+        private string _atk1;
+        private string _atk2;
+        private string _atk3;
+        private string _atk4;
+        private string _special;
+        private int _exp;
+
+        //protected
+        protected int xMapa = 10;
+        protected int yMapa = 2;
+        protected string[] mapa =
 {
         "############################################     #",
         "#          #                            ##       #",
@@ -87,6 +93,7 @@ namespace GameOfConsoleRPG.MotherClass
             set
             {
                 _atk1 = value;
+                TipoAtaque1();
             }
 
         }
@@ -99,6 +106,7 @@ namespace GameOfConsoleRPG.MotherClass
             set
             {
                 _atk2 = value;
+                TipoAtaque2();
             }
 
         }
@@ -111,6 +119,7 @@ namespace GameOfConsoleRPG.MotherClass
             set
             {
                 _atk3 = value;
+                TipoAtaque3();
             }
 
         }
@@ -123,6 +132,8 @@ namespace GameOfConsoleRPG.MotherClass
             set
             {
                 _atk4 = value;
+                
+                TipoAtaque4();
             }
 
         }

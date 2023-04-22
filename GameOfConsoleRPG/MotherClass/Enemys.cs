@@ -12,9 +12,12 @@ namespace GameOfConsoleRPG.MotherClass
 {
     public class Enemys
     {
+        //public
         public string Name;
         public int Hp;
         public int Mana;
+
+        //private
         public string Atk1;
         public string Atk2;
         public int Lvl;
@@ -23,10 +26,11 @@ namespace GameOfConsoleRPG.MotherClass
         public int velocx;
         public int velocy;
 
-        static bool terminado;
-        static Random generador;
 
-        static int numpeon;
+        //protected
+        protected bool terminado;
+        protected Random generador;
+        protected int numpeon;
 
         public Enemys(string name, int hp, int mana, string atk1, string atk2, int lvl, int x, int y, int velocx, int velocy) 
         {       
@@ -138,32 +142,6 @@ namespace GameOfConsoleRPG.MotherClass
 
 
             return horse;
-
-
-        }
-
-        public EnemyHorse[] GeneradorDeEnemigosHorse(EnemyKing[] king)
-        {
-
-            terminado = false;
-            generador = new Random();
-
-            numpeon = king.Length - 1;
-
-            //peon[numpeon].velocx = 1;
-            for (int i = 0; i < king.Length; i++)
-            {
-                if (numpeon >= 0)
-                    king[i].x = generador.Next(10, 50);
-                king[i].y = i * 5 + 3;
-                king[i].Color = king[numpeon].Color;
-                king[i].Simbolo = king[numpeon].Simbolo;
-                king[i].velocx = 1;
-
-            }
-
-
-            return king;
 
 
         }
