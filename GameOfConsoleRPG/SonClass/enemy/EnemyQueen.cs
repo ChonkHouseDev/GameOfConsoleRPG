@@ -28,7 +28,6 @@ namespace GameOfConsoleRPG.SonClass.enemy
             Visible = visible;
         }
 
-
         public int GolpeNormal
         {
             get { return _atk1; }
@@ -51,8 +50,6 @@ namespace GameOfConsoleRPG.SonClass.enemy
                 Ataque2();
             }
         }
-
-
 
         public void Ataque1()
         {

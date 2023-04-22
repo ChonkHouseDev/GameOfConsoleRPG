@@ -35,7 +35,6 @@ namespace GameOfConsoleRPG.SonClass.hero
             Visible = visible;
         }
 
-
         public bool  Flecha {
             get { return _flecha; }
 
