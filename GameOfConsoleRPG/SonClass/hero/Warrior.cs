@@ -31,6 +31,9 @@ namespace GameOfConsoleRPG.SonClass.hero
                     ConsoleColor color, bool visible) : base(lvl, x, y)
         {
             Ability = ability;
+            Simbolo = simbolo;
+            Color = color;
+            Visible = visible;
         }
 
         public int VidaExtra

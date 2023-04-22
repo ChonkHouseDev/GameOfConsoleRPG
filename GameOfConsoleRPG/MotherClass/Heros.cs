@@ -190,6 +190,54 @@ namespace GameOfConsoleRPG.MotherClass
 
         }
 
+        public void ComprobarEntradayUsuarioajax(Warrior ajax)
+        {
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo tecla = Console.ReadKey(true);
+                if ((tecla.Key == ConsoleKey.LeftArrow)
+                        && (EsPosibleMover(ajax.X - 1, ajax.Y)))
+                    ajax.X--;
+
+                if ((tecla.Key == ConsoleKey.RightArrow)
+                        && (EsPosibleMover(ajax.X + 1, ajax.Y)))
+                    ajax.X++;
+
+                if ((tecla.Key == ConsoleKey.UpArrow)
+                        && (EsPosibleMover(ajax.X, ajax.Y - 1)))
+                    ajax.Y--;
+
+                if ((tecla.Key == ConsoleKey.DownArrow)
+                        && (EsPosibleMover(ajax.X, ajax.Y + 1)))
+                    ajax.Y++;
+            }
+
+        }
+
+        public void ComprobarEntradayUsuariolegolas(Archer legolas)
+        {
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo tecla = Console.ReadKey(true);
+                if ((tecla.Key == ConsoleKey.LeftArrow)
+                        && (EsPosibleMover(legolas.X - 1, legolas.Y)))
+                    legolas.X--;
+
+                if ((tecla.Key == ConsoleKey.RightArrow)
+                        && (EsPosibleMover(legolas.X + 1, legolas.Y)))
+                    legolas.X++;
+
+                if ((tecla.Key == ConsoleKey.UpArrow)
+                        && (EsPosibleMover(legolas.X, legolas.Y - 1)))
+                    legolas.Y--;
+
+                if ((tecla.Key == ConsoleKey.DownArrow)
+                        && (EsPosibleMover(legolas.X, legolas.Y + 1)))
+                    legolas.Y++;
+            }
+
+        }
+
         public bool EsPosibleMover(int x, int y)
         {
 
@@ -228,6 +276,80 @@ namespace GameOfConsoleRPG.MotherClass
             Console.ForegroundColor = merlin.Color;
             Console.SetCursorPosition(merlin.X, merlin.Y);
             Console.Write(merlin.Simbolo);
+
+            for (int i = 0; i < peon.Length; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(peon[i].x, peon[i].y);
+                Console.Write(peon[i].Simbolo);
+            }
+
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i].Visible)
+                {
+
+                    Console.ForegroundColor = items[i].Color;
+                    Console.SetCursorPosition(items[i].X, items[i].Y);
+                    Console.Write(items[i].Simbolo);
+                }
+            }
+
+            Console.SetCursorPosition(1, 1);
+            Console.Write("Puntos: " + punto);
+        }
+
+        public void DibujarCalabozoajax(Warrior ajax, EnemyPeon[] peon, ObjectBomb[] items, int punto)
+        {
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            for (int i = 0; i < mapa.Length; i++)
+            {
+                Console.SetCursorPosition(xMapa, yMapa + i);
+                Console.Write(mapa[i]);
+            }
+
+            Console.ForegroundColor = ajax.Color;
+            Console.SetCursorPosition(ajax.X, ajax.Y);
+            Console.Write(ajax.Simbolo);
+
+            for (int i = 0; i < peon.Length; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(peon[i].x, peon[i].y);
+                Console.Write(peon[i].Simbolo);
+            }
+
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i].Visible)
+                {
+
+                    Console.ForegroundColor = items[i].Color;
+                    Console.SetCursorPosition(items[i].X, items[i].Y);
+                    Console.Write(items[i].Simbolo);
+                }
+            }
+
+            Console.SetCursorPosition(1, 1);
+            Console.Write("Puntos: " + punto);
+        }
+
+        public void DibujarCalabozoLegolas(Archer legolas, EnemyPeon[] peon, ObjectBomb[] items, int punto)
+        {
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            for (int i = 0; i < mapa.Length; i++)
+            {
+                Console.SetCursorPosition(xMapa, yMapa + i);
+                Console.Write(mapa[i]);
+            }
+
+            Console.ForegroundColor = legolas.Color;
+            Console.SetCursorPosition(legolas.X, legolas.Y);
+            Console.Write(legolas.Simbolo);
 
             for (int i = 0; i < peon.Length; i++)
             {

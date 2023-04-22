@@ -94,8 +94,8 @@ while (true)
 {
     Console.WriteLine("Elige un Personaje:");
     Console.WriteLine("1. Mago");
-    Console.WriteLine("2. Caballero");
-    Console.WriteLine("3. Arquero");
+    Console.WriteLine("2. Arquero");
+    Console.WriteLine("3. Caballero");
 
     Console.Write("Ingrese una opción: ");
     string opcion = Console.ReadLine();
@@ -135,6 +135,17 @@ while (true)
             }
             break;
         case "2":
+
+            InicioHeroe.Nombre = "Legolas";
+            InicioHeroe.ElMana = 100;
+            InicioHeroe.Highpoints = 100;
+            InicioHeroe.Ataque1 = "Tiro a distancia";
+            InicioHeroe.Ataque2 = "Tiro directo ";
+            InicioHeroe.Ataque3 = "Tiro de Cerca";
+            InicioHeroe.Ataque4 = "Tiro Envenado";
+            InicioHeroe.Especialista = "";
+            InicioHeroe.Experiencia = 0;
+
             Archer legolas = new Archer(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
                                    InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
                                    InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, 
@@ -146,11 +157,11 @@ while (true)
             while (!terminado)
             {
 
-                InicioHeroe.ComprobarEntradayUsuario(merlin);
-                InicioEnemigos.AnimarElementos(peonesActualizados);
-                bool terminadoEnemigos = InicioEnemigos.ComprobarEstadoDelJuegoEnemigos(peonesActualizados, merlin);
-                (bool term, int punto) = InicioObjetos.ComprobaritemsUsuario(merlin, itemsActualizados);
-                InicioHeroe.DibujarCalabozo(merlin, peonesActualizados, itemsActualizados, punto);
+                InicioHeroe.ComprobarEntradayUsuariolegolas(legolas);
+                InicioEnemigos.AnimarElementos(peonesActualizado);
+                bool terminadoEnemigos = InicioEnemigos.ComprobarEstadoDelJuegoEnemigosLegolas(peonesActualizado, legolas);
+                (bool term, int punto) = InicioObjetos.ComprobaritemsUsuario(legolas, itemsActualizado);
+                InicioHeroe.DibujarCalabozoLegolas(legolas, peonesActualizado, itemsActualizado, punto);
                 if (terminadoEnemigos == true || term == true)
                     terminado = true;
                 InicioHeroe.PausaHastaFinDeFotograma();
@@ -158,22 +169,31 @@ while (true)
 
             break;
         case "3":
+            InicioHeroe.Nombre = "Ajax";
+            InicioHeroe.ElMana = 80;
+            InicioHeroe.Highpoints = 200;
+            InicioHeroe.Ataque1 = "Hachazo";
+            InicioHeroe.Ataque2 = "Lanza";
+            InicioHeroe.Ataque3 = "Terremoto";
+            InicioHeroe.Ataque4 = "Escudo";
+            InicioHeroe.Especialista = "";
+            InicioHeroe.Experiencia = 0;
             Warrior ajax = new Warrior(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
                                    InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
                                    InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, 
                                    "Inmunidad", "☠", ConsoleColor.DarkRed, true);
 
-            EnemyPeon[] peonesActualizados = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
-            ObjectBomb[] itemsActualizados = InicioObjetos.GeneradorDeObjetosBomba(objetos);
+            EnemyPeon[] peonesActualizad = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
+            ObjectBomb[] itemsActualizad = InicioObjetos.GeneradorDeObjetosBomba(objetos);
 
             while (!terminado)
             {
 
-                InicioHeroe.ComprobarEntradayUsuario(merlin);
-                InicioEnemigos.AnimarElementos(peonesActualizados);
-                bool terminadoEnemigos = InicioEnemigos.ComprobarEstadoDelJuegoEnemigos(peonesActualizados, merlin);
-                (bool term, int punto) = InicioObjetos.ComprobaritemsUsuario(merlin, itemsActualizados);
-                InicioHeroe.DibujarCalabozo(merlin, peonesActualizados, itemsActualizados, punto);
+                InicioHeroe.ComprobarEntradayUsuarioajax(ajax);
+                InicioEnemigos.AnimarElementos(peonesActualizad);
+                bool terminadoEnemigos = InicioEnemigos.ComprobarEstadoDelJuegoEnemigosAjax(peonesActualizad, ajax);
+                (bool term, int punto) = InicioObjetos.ComprobaritemsUsuario(ajax, itemsActualizad);
+                InicioHeroe.DibujarCalabozoajax(ajax, peonesActualizad, itemsActualizad, punto);
                 if (terminadoEnemigos == true || term == true)
                     terminado = true;
                 InicioHeroe.PausaHastaFinDeFotograma();
