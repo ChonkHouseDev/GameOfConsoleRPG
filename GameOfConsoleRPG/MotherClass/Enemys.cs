@@ -59,10 +59,6 @@ namespace GameOfConsoleRPG.MotherClass
             }
 
 
-
-
-
-
             return peon;
 
 

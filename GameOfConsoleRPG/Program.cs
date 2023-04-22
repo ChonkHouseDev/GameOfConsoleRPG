@@ -108,13 +108,22 @@ while (true)
     {
         case "1":
             InicioHeroe.Nombre = "Merlin";
-            InicioHeroe.Mana = 200;
+            InicioHeroe.ElMana = 200;
             InicioHeroe.Highpoints = 80;
-            InicioHeroe.Atk1     
-            Mage merlin = new Mage(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Atk1, InicioHeroe.Atk2, InicioHeroe.Lvl,
-                       InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "AntiMagia", "☃", ConsoleColor.Yellow, true);
+            InicioHeroe.Ataque1 = "Fire";
+            InicioHeroe.Ataque2 = "Water";
+            InicioHeroe.Ataque3 = "Earth";
+            InicioHeroe.Ataque4 = "Thunder";
+            InicioHeroe.Especialista = "";
+            InicioHeroe.Experiencia = 0;
+
+            Mage merlin = new Mage(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
+                                   InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia, 
+                                   InicioHeroe.Lvl,InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "AntiMagia", 
+                                   "☃", ConsoleColor.Yellow, true);
+
             EnemyPeon[] peonesActualizados = InicioEnemigos.GeneradorDeEnemigos(peon);
-            ObjectBomb[] itemsActualizados = InicioObjetos.GeneradorDeObjetos(objetos);
+            ObjectBomb[] itemsActualizados = InicioObjetos.GeneradorDeObjetosBomba(objetos);
 
             while (!terminado)
             {
@@ -130,12 +139,16 @@ while (true)
             }
             break;
         case "2":
-            Archer legolas = new Archer(InicioHeroe.Name, InicioHeroe.Hp, InicioHeroe.Mana, InicioHeroe.Atk1, InicioHeroe.Atk2, InicioHeroe.Lvl,
-                       InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "AntiFlechas", "☺", ConsoleColor.DarkBlue, true);
+            Archer legolas = new Archer(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
+                                   InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
+                                   InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, 
+                                   "AntiFlechas", "☺", ConsoleColor.DarkBlue, true);
             break;
         case "3":
-            Warrior ajax = new Warrior(InicioHeroe.Name, InicioHeroe.Hp, InicioHeroe.Mana, InicioHeroe.Atk1, InicioHeroe.Atk2, InicioHeroe.Lvl,
-                        InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "Inmunidad", "☠", ConsoleColor.DarkRed, true);
+            Warrior ajax = new Warrior(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
+                                   InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
+                                   InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, 
+                                   "Inmunidad", "☠", ConsoleColor.DarkRed, true);
             return;
         default:
             Console.WriteLine("Opción inválida. Intente de nuevo.");

@@ -58,7 +58,7 @@ namespace GameOfConsoleRPG.MotherClass
             Y = y;
         }
 
-        public ObjectBomb[] GeneradorDeObjetos(ObjectBomb[] items)
+        public ObjectBomb[] GeneradorDeObjetosBomba(ObjectBomb[] items)
         {
             generador = new Random();
             numItems = items.Length - 1;

@@ -10,8 +10,9 @@ namespace GameOfConsoleRPG.SonClass.hero
     public class Warrior : Heros
     {
         string Ability;
-        public Warrior(string name, int hp, int mana, string atk1, string atk2, int lvl, int x, int y, int velocx, int velocy, string ability, string simbolo,
-              ConsoleColor color, bool visible) : base(lvl, x, y)
+        public Warrior(string name, int hp, int mana, string atk1, string atk2, string atk3, string atk4,
+                    string special, int exp, int lvl, int x, int y, int velocx, int velocy, string ability, string simbolo,
+                    ConsoleColor color, bool visible) : base(lvl, x, y)
         {
             Ability = ability;
         }
