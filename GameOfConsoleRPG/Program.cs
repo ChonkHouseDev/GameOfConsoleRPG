@@ -122,7 +122,7 @@ while (true)
                                    InicioHeroe.Lvl,InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "AntiMagia", 
                                    "☃", ConsoleColor.Yellow, true);
 
-            EnemyPeon[] peonesActualizados = InicioEnemigos.GeneradorDeEnemigos(peon);
+            EnemyPeon[] peonesActualizados = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
             ObjectBomb[] itemsActualizados = InicioObjetos.GeneradorDeObjetosBomba(objetos);
 
             while (!terminado)

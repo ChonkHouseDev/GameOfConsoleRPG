@@ -38,7 +38,7 @@ namespace GameOfConsoleRPG.MotherClass
                 Lvl = lvl;
         }
 
-        public EnemyPeon[] GeneradorDeEnemigos(EnemyPeon[] peon)
+        public EnemyPeon[] GeneradorDeEnemigosPeones(EnemyPeon[] peon)
         {
 
             terminado = false;
@@ -60,6 +60,110 @@ namespace GameOfConsoleRPG.MotherClass
 
 
             return peon;
+
+
+        }
+
+        public EnemyQueen[] GeneradorDeEnemigosQueen(EnemyQueen[] queen)
+        {
+
+            terminado = false;
+            generador = new Random();
+
+            numpeon = queen.Length - 1;
+
+            //peon[numpeon].velocx = 1;
+            for (int i = 0; i < queen.Length; i++)
+            {
+                if (numpeon >= 0)
+                    queen[i].x = generador.Next(10, 50);
+                queen[i].y = i * 5 + 3;
+                queen[i].Color = queen[numpeon].Color;
+                queen[i].Simbolo = queen[numpeon].Simbolo;
+                queen[i].velocx = 1;
+
+            }
+
+
+            return queen;
+
+
+        }
+
+        public EnemyKing[] GeneradorDeEnemigosKing(EnemyKing[] king)
+        {
+
+            terminado = false;
+            generador = new Random();
+
+            numpeon = king.Length - 1;
+
+            //peon[numpeon].velocx = 1;
+            for (int i = 0; i < king.Length; i++)
+            {
+                if (numpeon >= 0)
+                    king[i].x = generador.Next(10, 50);
+                king[i].y = i * 5 + 3;
+                king[i].Color = king[numpeon].Color;
+                king[i].Simbolo = king[numpeon].Simbolo;
+                king[i].velocx = 1;
+
+            }
+
+
+            return king;
+
+
+        }
+
+        public EnemyHorse[] GeneradorDeEnemigosKing(EnemyHorse[] horse)
+        {
+
+            terminado = false;
+            generador = new Random();
+
+            numpeon = horse.Length - 1;
+
+            //peon[numpeon].velocx = 1;
+            for (int i = 0; i < horse.Length; i++)
+            {
+                if (numpeon >= 0)
+                    horse[i].x = generador.Next(10, 50);
+                horse[i].y = i * 5 + 3;
+                horse[i].Color = horse[numpeon].Color;
+                horse[i].Simbolo = horse[numpeon].Simbolo;
+                horse[i].velocx = 1;
+
+            }
+
+
+            return horse;
+
+
+        }
+
+        public EnemyHorse[] GeneradorDeEnemigosHorse(EnemyKing[] king)
+        {
+
+            terminado = false;
+            generador = new Random();
+
+            numpeon = king.Length - 1;
+
+            //peon[numpeon].velocx = 1;
+            for (int i = 0; i < king.Length; i++)
+            {
+                if (numpeon >= 0)
+                    king[i].x = generador.Next(10, 50);
+                king[i].y = i * 5 + 3;
+                king[i].Color = king[numpeon].Color;
+                king[i].Simbolo = king[numpeon].Simbolo;
+                king[i].velocx = 1;
+
+            }
+
+
+            return king;
 
 
         }

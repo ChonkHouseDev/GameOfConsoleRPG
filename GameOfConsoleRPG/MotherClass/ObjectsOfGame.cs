@@ -78,6 +78,86 @@ namespace GameOfConsoleRPG.MotherClass
             return items;
         }
 
+        public ObjectBow[] GeneradorDeObjetosBow(ObjectBow[] itemBow)
+        {
+            generador = new Random();
+            numItems = itemBow.Length - 1;
+            itemsRestantes = numItems;
+            for (int i = 0; i < numItems; i++)
+            {
+                itemBow[i].X = generador.Next(5, 55);
+                itemBow[i].Y = generador.Next(2, 20);
+                itemBow[i].Color = itemBow[itemsRestantes].Color;
+                itemBow[i].Simbolo = itemBow[itemsRestantes].Simbolo;
+                itemBow[i].Visible = itemBow[itemsRestantes].Visible;
+            }
+
+
+            puntos = 0;
+
+            return itemBow;
+        }
+
+        public ObjectHealer[] GeneradorDeObjetosBow(ObjectHealer[] itemBow)
+        {
+            generador = new Random();
+            numItems = itemBow.Length - 1;
+            itemsRestantes = numItems;
+            for (int i = 0; i < numItems; i++)
+            {
+                itemBow[i].X = generador.Next(5, 55);
+                itemBow[i].Y = generador.Next(2, 20);
+                itemBow[i].Color = itemBow[itemsRestantes].Color;
+                itemBow[i].Simbolo = itemBow[itemsRestantes].Simbolo;
+                itemBow[i].Visible = itemBow[itemsRestantes].Visible;
+            }
+
+
+            puntos = 0;
+
+            return itemBow;
+        }
+
+        public ObjectStickMage[] GeneradorDeObjetosBow(ObjectStickMage[] itemBow)
+        {
+            generador = new Random();
+            numItems = itemBow.Length - 1;
+            itemsRestantes = numItems;
+            for (int i = 0; i < numItems; i++)
+            {
+                itemBow[i].X = generador.Next(5, 55);
+                itemBow[i].Y = generador.Next(2, 20);
+                itemBow[i].Color = itemBow[itemsRestantes].Color;
+                itemBow[i].Simbolo = itemBow[itemsRestantes].Simbolo;
+                itemBow[i].Visible = itemBow[itemsRestantes].Visible;
+            }
+
+
+            puntos = 0;
+
+            return itemBow;
+        }
+
+        public ObjectSword[] GeneradorDeObjetosBow(ObjectSword[] itemBow)
+        {
+            generador = new Random();
+            numItems = itemBow.Length - 1;
+            itemsRestantes = numItems;
+            for (int i = 0; i < numItems; i++)
+            {
+                itemBow[i].X = generador.Next(5, 55);
+                itemBow[i].Y = generador.Next(2, 20);
+                itemBow[i].Color = itemBow[itemsRestantes].Color;
+                itemBow[i].Simbolo = itemBow[itemsRestantes].Simbolo;
+                itemBow[i].Visible = itemBow[itemsRestantes].Visible;
+            }
+
+
+            puntos = 0;
+
+            return itemBow;
+        }
+
         public (bool, int) ComprobaritemsUsuario(Heros merlin, ObjectBomb[] items)
         {
             itemsRestantes = items.Length;
