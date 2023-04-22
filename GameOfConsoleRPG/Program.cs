@@ -150,13 +150,9 @@ while (true)
             Listaagradecimiento.Add("Gracias");
             Listaagradecimiento.Add("Por Jugar");
             Listaagradecimiento.Add(merlin.Name);
-
-
-            void ImprimirAgradecimientos1(List<string> listapersonajes)
-            {
                 foreach (string personaje in Listaagradecimiento)
                     Console.WriteLine(personaje);
-            }
+            
             break;
         case "2":
 
@@ -199,11 +195,8 @@ while (true)
             Listaagradecimiento2.Add(legolas.Name);
 
 
-            void ImprimirAgradecimientos(List<string> listapersonajes)
-            {
-                foreach (string personaje in Listaagradecimiento)
+                foreach (string personaje in Listaagradecimiento2)
                     Console.WriteLine(personaje);
-            }
 
             break;
         case "3":
@@ -244,11 +237,10 @@ while (true)
             Listaagradecimiento3.Add(ajax.Name);
 
 
-            void ImprimirAgradecimientos3(List<string> listapersonajes)
-            {
-                foreach (string personaje in Listaagradecimiento)
+
+                foreach (string personaje in Listaagradecimiento3)
                     Console.WriteLine(personaje);
-            }
+
             return;
         default:
             Console.WriteLine("Opción inválida. Intente de nuevo.");

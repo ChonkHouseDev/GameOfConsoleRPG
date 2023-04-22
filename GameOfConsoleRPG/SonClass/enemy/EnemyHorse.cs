@@ -52,8 +52,6 @@ namespace GameOfConsoleRPG.SonClass.enemy
             }
         }
 
-
-
         public void Ataque1()
         {
             _damage = _damage + 10;
