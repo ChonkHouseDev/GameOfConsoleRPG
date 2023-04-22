@@ -28,6 +28,17 @@ peon[2] = peon3;
 
 ObjectBomb[] objetos = new ObjectBomb[20];
 
+
+ObjectHealer[] ObjectHealers = new ObjectHealer[5];
+
+
+
+ObjectSword[] ObjSwords = new ObjectSword[1];
+ObjectStickMage[] stickmage = new ObjectStickMage[1];
+ObjectShield[] ObjShields = new ObjectShield[1];
+ObjectBow[] ObjectBows = new ObjectBow[1];
+
+
 ObjectBomb obj1 = new ObjectBomb(InicioObjetos.Name, InicioObjetos.TypeObjet, InicioObjetos.Lvl, InicioObjetos.Damage, InicioObjetos.ValueDamage, InicioObjetos.Reusable,
                                         InicioObjetos.LvlUsable, InicioObjetos.Tresure, InicioObjetos.Weapon, 0, 0, true,0, false, "●", ConsoleColor.Green, true);
 ObjectBomb obj2 = new ObjectBomb(InicioObjetos.Name, InicioObjetos.TypeObjet, InicioObjetos.Lvl, InicioObjetos.Damage, InicioObjetos.ValueDamage, InicioObjetos.Reusable,

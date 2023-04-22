@@ -19,6 +19,7 @@ namespace GameOfConsoleRPG.MotherClass
         public int X;
         public int Y;
         public int ValueDamage;
+        public string _mensaje;
         
         //private
         public bool Reusable;
@@ -32,6 +33,7 @@ namespace GameOfConsoleRPG.MotherClass
         protected int itemsRestantes;
         protected int puntos;
         protected Random generador;
+
 
 
 
@@ -65,6 +67,40 @@ namespace GameOfConsoleRPG.MotherClass
             Y = y;
         }
 
+
+        public string BolsaVacia
+        {
+            get { return _mensaje; }
+
+            set
+            {
+                _mensaje = value;
+                MensajedeBolsaVacia();
+            }
+
+        }
+
+        public string BolsaLlena
+        {
+            get { return _mensaje; }
+
+            set
+            {
+                _mensaje = value;
+                MensajedeBolsaLlena();
+            }
+        }
+
+        public string Tesoro
+        {
+            get { return _mensaje; }
+
+            set
+            {
+                _mensaje = value;
+                MensajedeEncontrasteunTesro();
+            }
+        }
         public ObjectBomb[] GeneradorDeObjetosBomba(ObjectBomb[] items)
         {
             generador = new Random();
@@ -85,7 +121,28 @@ namespace GameOfConsoleRPG.MotherClass
             return items;
         }
 
-        public ObjectBow[] GeneradorDeObjetosBow(ObjectBow[] itemBow)
+        private void MensajedeBolsaLlena()
+        {
+
+            Console.WriteLine("Tu Bolsa esta llena");
+
+        }
+
+        private void MensajedeBolsaVacia()
+        {
+
+            Console.WriteLine("Tu Bolsa esta Vacia");
+
+        }
+
+        private void MensajedeEncontrasteunTesro()
+        {
+
+            Console.WriteLine("Has Encontrado un tesoro");
+
+        }
+
+        private ObjectBow[] GeneradorDeObjetosBow(ObjectBow[] itemBow)
         {
             generador = new Random();
             numItems = itemBow.Length - 1;
@@ -105,7 +162,7 @@ namespace GameOfConsoleRPG.MotherClass
             return itemBow;
         }
 
-        public ObjectHealer[] GeneradorDeObjetosHealer(ObjectHealer[] itemHealer)
+        private ObjectHealer[] GeneradorDeObjetosHealer(ObjectHealer[] itemHealer)
         {
             generador = new Random();
             numItems = itemHealer.Length - 1;
@@ -125,7 +182,7 @@ namespace GameOfConsoleRPG.MotherClass
             return itemHealer;
         }
 
-        public ObjectStickMage[] GeneradorDeObjetosStickMage(ObjectStickMage[] itemStickMage)
+        protected ObjectStickMage[] GeneradorDeObjetosStickMage(ObjectStickMage[] itemStickMage)
         {
             generador = new Random();
             numItems = itemStickMage.Length - 1;
@@ -145,7 +202,7 @@ namespace GameOfConsoleRPG.MotherClass
             return itemStickMage;
         }
 
-        public ObjectSword[] GeneradorDeObjetosSword(ObjectSword[] itemSword)
+        protected ObjectSword[] GeneradorDeObjetosSword(ObjectSword[] itemSword)
         {
             generador = new Random();
             numItems = itemSword.Length - 1;
@@ -165,7 +222,7 @@ namespace GameOfConsoleRPG.MotherClass
             return itemSword;
         }
 
-        public ObjectShield[] GeneradorDeObjetosShield(ObjectShield[] itemSword)
+        protected ObjectShield[] GeneradorDeObjetosShield(ObjectShield[] itemShield)
         {
             generador = new Random();
             numItems = itemSword.Length - 1;
@@ -211,6 +268,10 @@ namespace GameOfConsoleRPG.MotherClass
             return (terminado, puntos);
         }
 
+        private void MensajedeBolsaLena() {
 
+            Console.WriteLine("Tu Bolsa esta llena");
+
+        }
     }
 }

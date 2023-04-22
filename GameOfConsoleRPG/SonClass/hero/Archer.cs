@@ -12,7 +12,9 @@ namespace GameOfConsoleRPG.SonClass.hero
 
         public int _hp;
         public int _mana;
-
+        public int _damage;
+        public string _lock;
+        public bool _flecha;
         protected bool Visible;
         protected string Ability;
         protected string _special;
@@ -25,7 +27,7 @@ namespace GameOfConsoleRPG.SonClass.hero
 
         public Archer(string name, int hp, int mana, string atk1, string atk2, string atk3, string atk4,
                     string special, int exp, int lvl, int x, int y, int velocx, int velocy, string ability, string simbolo,
-                    ConsoleColor color, bool visible) :base(lvl, x, y)
+                    ConsoleColor color, bool visible) : base(lvl, x, y)
         {
             Ability = ability;
             Simbolo = simbolo;
@@ -34,26 +36,36 @@ namespace GameOfConsoleRPG.SonClass.hero
         }
 
 
+        public bool  Flecha {
+            get { return _flecha; }
 
-        public int VidaExtra
+            set
+            {
+                _flecha = value;
+                FlechaArdiente();
+            }
+
+        }
+
+        public int Tiro
         {
             get { return _hp; }
 
             set
             {
                 _hp = value;
-                vidaExtra();
+                TiroCertero();
             }
         }
 
-        public int ManaExtra
+        public int Distancia
         {
             get { return _mana; }
 
             set
             {
                 _mana = value;
-                manaExtra();
+                DistanciaAlagarda();
             }
         }
 
@@ -136,16 +148,23 @@ namespace GameOfConsoleRPG.SonClass.hero
             }
         }
 
-        public void vidaExtra()
+        public void TiroCertero()
         {
 
-            _hp = _hp + 100;
+            _damage = _damage + 100;
         }
 
-        public void manaExtra()
+        public void DistanciaAlagarda()
+        {
+            _lock = _lock + 1000;
+
+            Console.WriteLine("El Usuario Tiene la mirada en el objetivo no puede fallar");
+        }
+
+        public void FlechaArdiente()
         {
 
-            _mana = _mana + 200;
+            Console.WriteLine("Tiro Especial con flecha solo se puede usar una vez por partida");
         }
 
         public void CambioAtaque1()

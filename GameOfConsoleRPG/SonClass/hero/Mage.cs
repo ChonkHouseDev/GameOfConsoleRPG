@@ -16,6 +16,7 @@ namespace GameOfConsoleRPG.SonClass.hero
 
         public int _hp;
         public int _mana;
+        public bool _boost;
 
         protected bool Visible;
         protected string Ability;
@@ -40,6 +41,16 @@ namespace GameOfConsoleRPG.SonClass.hero
 
         }
 
+        public bool LastBreath
+        {
+            get { return _boost; }
+
+            set
+            {
+                _boost = value;
+                Ultimoaliento();
+            }
+        }
         public int VidaExtra
         {
             get { return _hp; }
@@ -138,6 +149,12 @@ namespace GameOfConsoleRPG.SonClass.hero
                 _special = value;
                 CambioDeHabilidadxNivel();
             }
+        }
+
+        public void Ultimoaliento()
+        {
+
+            Console.WriteLine("El usuario Incrementa su ataque para eliminar todos sus enemigos");
         }
 
         public void vidaExtra() {
