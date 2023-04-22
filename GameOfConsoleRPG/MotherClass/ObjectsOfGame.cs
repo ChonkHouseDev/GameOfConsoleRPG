@@ -101,6 +101,7 @@ namespace GameOfConsoleRPG.MotherClass
                 MensajedeEncontrasteunTesro();
             }
         }
+
         public ObjectBomb[] GeneradorDeObjetosBomba(ObjectBomb[] items)
         {
             generador = new Random();
@@ -225,21 +226,21 @@ namespace GameOfConsoleRPG.MotherClass
         protected ObjectShield[] GeneradorDeObjetosShield(ObjectShield[] itemShield)
         {
             generador = new Random();
-            numItems = itemSword.Length - 1;
+            numItems = itemShield.Length - 1;
             itemsRestantes = numItems;
             for (int i = 0; i < numItems; i++)
             {
-                itemSword[i].X = generador.Next(5, 55);
-                itemSword[i].Y = generador.Next(2, 20);
-                itemSword[i].Color = itemSword[itemsRestantes].Color;
-                itemSword[i].Simbolo = itemSword[itemsRestantes].Simbolo;
-                itemSword[i].Visible = itemSword[itemsRestantes].Visible;
+                itemShield[i].X = generador.Next(5, 55);
+                itemShield[i].Y = generador.Next(2, 20);
+                itemShield[i].Color = itemShield[itemsRestantes].Color;
+                itemShield[i].Simbolo = itemShield[itemsRestantes].Simbolo;
+                itemShield[i].Visible = itemShield[itemsRestantes].Visible;
             }
 
 
             puntos = 0;
 
-            return itemSword;
+            return itemShield;
         }
 
         public (bool, int) ComprobaritemsUsuario(Heros merlin, ObjectBomb[] items)
@@ -266,12 +267,6 @@ namespace GameOfConsoleRPG.MotherClass
             }
 
             return (terminado, puntos);
-        }
-
-        private void MensajedeBolsaLena() {
-
-            Console.WriteLine("Tu Bolsa esta llena");
-
         }
     }
 }

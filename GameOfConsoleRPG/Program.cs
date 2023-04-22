@@ -125,8 +125,8 @@ while (true)
             InicioHeroe.Experiencia = 0;
 
             Mage merlin = new Mage(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
-                                   InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia, 
-                                   InicioHeroe.Lvl,InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "AntiMagia", 
+                                   InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
+                                   InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, "AntiMagia",
                                    "☃", ConsoleColor.DarkGreen, true);
 
             EnemyPeon[] peonesActualizados = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
@@ -144,6 +144,19 @@ while (true)
                     terminado = true;
                 InicioHeroe.PausaHastaFinDeFotograma();
             }
+
+            List<string> Listaagradecimiento = new List<string>();
+
+            Listaagradecimiento.Add("Gracias");
+            Listaagradecimiento.Add("Por Jugar");
+            Listaagradecimiento.Add(merlin.Name);
+
+
+            void ImprimirAgradecimientos1(List<string> listapersonajes)
+            {
+                foreach (string personaje in Listaagradecimiento)
+                    Console.WriteLine(personaje);
+            }
             break;
         case "2":
 
@@ -159,7 +172,7 @@ while (true)
 
             Archer legolas = new Archer(InicioHeroe.Nombre, InicioHeroe.Highpoints, InicioHeroe.ElMana, InicioHeroe.Ataque1, InicioHeroe.Ataque2,
                                    InicioHeroe.Ataque3, InicioHeroe.Ataque4, InicioHeroe.Especialista, InicioHeroe.Experiencia,
-                                   InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy, 
+                                   InicioHeroe.Lvl, InicioHeroe.X, InicioHeroe.Y, InicioHeroe.velocx, InicioHeroe.velocy,
                                    "AntiFlechas", "☺", ConsoleColor.DarkBlue, true);
 
             EnemyPeon[] peonesActualizado = InicioEnemigos.GeneradorDeEnemigosPeones(peon);
@@ -176,6 +189,20 @@ while (true)
                 if (terminadoEnemigos == true || term == true)
                     terminado = true;
                 InicioHeroe.PausaHastaFinDeFotograma();
+            }
+
+
+            List<string> Listaagradecimiento2 = new List<string>();
+
+            Listaagradecimiento2.Add("Gracias");
+            Listaagradecimiento2.Add("Por Jugar");
+            Listaagradecimiento2.Add(legolas.Name);
+
+
+            void ImprimirAgradecimientos(List<string> listapersonajes)
+            {
+                foreach (string personaje in Listaagradecimiento)
+                    Console.WriteLine(personaje);
             }
 
             break;
@@ -208,6 +235,19 @@ while (true)
                 if (terminadoEnemigos == true || term == true)
                     terminado = true;
                 InicioHeroe.PausaHastaFinDeFotograma();
+            }
+
+            List<string> Listaagradecimiento3 = new List<string>();
+
+            Listaagradecimiento3.Add("Gracias");
+            Listaagradecimiento3.Add("Por Jugar");
+            Listaagradecimiento3.Add(ajax.Name);
+
+
+            void ImprimirAgradecimientos3(List<string> listapersonajes)
+            {
+                foreach (string personaje in Listaagradecimiento)
+                    Console.WriteLine(personaje);
             }
             return;
         default:

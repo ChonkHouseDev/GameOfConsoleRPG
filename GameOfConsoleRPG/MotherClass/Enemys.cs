@@ -16,6 +16,7 @@ namespace GameOfConsoleRPG.MotherClass
         public string Name;
         public int Hp;
         public int Mana;
+        public string _mensaje;
 
         //private
         public string Atk1;
@@ -40,6 +41,62 @@ namespace GameOfConsoleRPG.MotherClass
                 Atk1 = atk1;
                 Atk2 = atk2;
                 Lvl = lvl;
+        }
+
+        public string MensajeBossQueen
+        {
+            get { return _mensaje; }
+
+            set
+            {
+                _mensaje = value;
+                MensajeQueen();
+            }
+
+        }
+
+        public string MensajeBossKing
+        {
+            get { return _mensaje; }
+
+            set
+            {
+                _mensaje = value;
+                MensajeKing();
+            }
+        }
+
+        public string MensajeEnemigo
+        {
+            get { return _mensaje; }
+
+            set
+            {
+                _mensaje = value;
+                MensajeEnemigos();
+            }
+        }
+
+
+        private void MensajeQueen()
+        {
+
+            Console.WriteLine("Enserio Crees que podri vencer al reina?");
+
+        }
+
+        private void MensajeKing()
+        {
+
+            Console.WriteLine("Enserio Crees que podri vencer al rey?");
+
+        }
+
+        private void MensajeEnemigos()
+        {
+
+            Console.WriteLine("te he encontrado");
+
         }
 
         public EnemyPeon[] GeneradorDeEnemigosPeones(EnemyPeon[] peon)
@@ -68,7 +125,7 @@ namespace GameOfConsoleRPG.MotherClass
 
         }
 
-        public EnemyQueen[] GeneradorDeEnemigosQueen(EnemyQueen[] queen)
+        protected EnemyQueen[] GeneradorDeEnemigosQueen(EnemyQueen[] queen)
         {
 
             terminado = false;
@@ -94,7 +151,7 @@ namespace GameOfConsoleRPG.MotherClass
 
         }
 
-        public EnemyKing[] GeneradorDeEnemigosKing(EnemyKing[] king)
+        protected EnemyKing[] GeneradorDeEnemigosKing(EnemyKing[] king)
         {
 
             terminado = false;
@@ -120,7 +177,7 @@ namespace GameOfConsoleRPG.MotherClass
 
         }
 
-        public EnemyHorse[] GeneradorDeEnemigosHorse(EnemyHorse[] horse)
+        protected EnemyHorse[] GeneradorDeEnemigosHorse(EnemyHorse[] horse)
         {
 
             terminado = false;
